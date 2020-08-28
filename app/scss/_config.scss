@@ -17,6 +17,7 @@ $gutter: $grid-gutter-width;
 
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
 @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
+@import 'node_modules/swiper/swiper.scss';
 // @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
 // @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
 
@@ -101,6 +102,9 @@ a {
 }
 
 .btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   min-width: 250px;
   height: 50px;
   background-color: $accent;
@@ -151,6 +155,10 @@ a {
     border-color: $bg-red;
     transition: all 0.3s;
   }
+}
+
+.btn--br {
+  border-color: $text;
 }
 
 .container {

@@ -283,3 +283,190 @@
   }
 }
 
+//****************Cars*****************
+
+.cars {
+
+  &__container {
+  }
+
+  &__title {
+    text-align: center;
+
+    .h2 {
+      margin-bottom: $grid-gutter-width;
+    }
+  }
+
+  &__tabs {
+  }
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: $grid-gutter-width*3;
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    border: 1px solid #EBEBEB;
+    margin: 0 $grid-gutter-width/2;
+    padding: 11px 0;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 1.2px;
+    box-sizing: border-box;
+
+    &.active {
+      border-color: $accent;
+    }
+
+  }
+
+  &__container {
+    // display: flex;
+    width: 80%;
+    margin: 0 auto;
+    // justify-content: center;
+    display: none;
+
+    &:target {
+      display: block;
+    }
+  }
+
+  &__wrap {
+    width: 100%;
+  }
+
+  &__boby {
+  }
+}
+.slide {
+  padding: $grid-gutter-width;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 0 0 100%;
+
+
+  &__text {
+    width: 25%;
+    margin: $grid-gutter-width*4 0;
+    margin-right: $grid-gutter-width*4;
+  }
+
+  &__title {
+
+  }
+
+  &__list {
+    margin-top: $grid-gutter-width*2;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.31;
+    list-style: none;
+
+    li {
+      margin: $grid-gutter-width*1.5 0;
+      padding-left: $grid-gutter-width*1.5;
+      background: url('../images/src/check.svg') no-repeat 0% 50%;
+    }
+  }
+
+  &__img-wrap {
+    width: 65%;
+    margin-top: $grid-gutter-width*2;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+//***************Reviews*************
+.reviews {
+  background-color: $accent;
+
+  &__container {
+  }
+
+  &__title {
+    text-align: center;
+    margin-top: $grid-gutter-width*1.6;
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+  }
+
+  &__item {
+    margin-top: $grid-gutter-width*3;
+  }
+}
+.item-reviews {
+  flex: 0 0 30%;
+  font-size: 16px;
+  line-height: 1.31;
+
+  &__title {
+  }
+
+  &__date {
+    font-size: 16px;
+    line-height: 1.31;
+  }
+
+  &__stars {
+
+    &::before {
+      content: '★' '★' '★' '★' '★';
+      font-size: 19px;
+      line-height: 1;
+      color: $bg-red;
+    }
+  }
+
+  &__text {
+    margin-top: $grid-gutter-width;
+    letter-spacing: 1px;
+
+    p {
+      padding-bottom: $grid-gutter-width/2;
+      // overflow : hidden;
+      // text-overflow: ellipsis;
+      // display: -webkit-box;
+      // -webkit-line-clamp: 6;
+      // -webkit-box-orient: vertical;
+    }
+
+    a {
+      text-decoration: underline;
+      line-height: 1.3;
+    }
+  }
+
+  &__footer {
+    margin-top: $grid-gutter-width*3;
+    margin-bottom: $grid-gutter-width*2.5;
+    display: flex;
+    justify-content: center;
+  }
+}
+.btn {
+}
+.btn--br {
+}
+
+
+
+
+
+
