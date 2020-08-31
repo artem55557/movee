@@ -29,10 +29,6 @@
   }
 
   &__logo {
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 1.23;
-    text-transform: uppercase;
   }
 
   &__menu {
@@ -326,10 +322,8 @@
   }
 
   &__container {
-    // display: flex;
     width: 80%;
     margin: 0 auto;
-    // justify-content: center;
     display: none;
 
     &:target {
@@ -339,6 +333,7 @@
 
   &__wrap {
     width: 100%;
+    overflow: hidden;
   }
 
   &__boby {
@@ -465,6 +460,138 @@
 .btn--br {
 }
 
+//**************Contact**************
+
+.contacts {
+
+    &__container {
+    }
+
+    &__form {
+    }
+
+    &__wrap-map {
+      position: relative;
+    }
+
+    &__map {
+      position: relative;
+      margin-top: $grid-gutter-width*3.9;
+    }
+
+    &__adress {
+      position: absolute;
+      left: 23%;
+      bottom: 50%;
+      transform: translateY(50%);
+    }
+  }
+.container {
+}
+.form-contact {
+  margin-top: $grid-gutter-width*4;
+  margin-left: $grid-gutter-width*7;
+
+  span {
+    // display: block;
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid $text;
+    width: 27%;
+    margin-top: $grid-gutter-width*2 ;
+    margin-right: $grid-gutter-width*3;
+    font-size: 20px;
+    height: 40px;
+
+
+  }
+
+    &__title {
+    }
+
+    &__body {
+      display: flex;
+    }
+
+    &__btn-block {
+      display: inline-flex;
+      flex-direction: column;
+      margin-top: $grid-gutter-width*1.5;
+      font-size: 12px;
+
+      input {
+        height: 15px;
+        width: 15px;
+        margin: 0 $grid-gutter-width 0 0;
+      }
+
+      label {
+        margin: 0;
+      }
+    }
+    &__row {
+      display: flex;
+      align-items: center;
+      margin-top: $grid-gutter-width*0.7;
+    }
+    &__btn {
+      font-size: 20px;
+      line-height: 1.2;
+
+      &.btn--red {
+        min-width: 250px;
+      }
+    }
+}
+
+.adress{
+  min-width: 368px;
+  min-height: 326px;
+  padding: $grid-gutter-width*2 $grid-gutter-width*1.75;
+  background: #ffffff;
+  z-index: 1000;
+
+  &__logo {
+    display: block;
+    margin-bottom: $grid-gutter-width*2;
+    line-height: 1;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    padding-left: $grid-gutter-width*1.5;
+    background: url('../images/src/check-y.svg') no-repeat 0 50%;
+    margin-bottom: $grid-gutter-width;
+    font-size: 16px;
+    line-height: 1.31;
+    letter-spacing: 1px;
+  }
+
+  &__social {
+    margin-top: $grid-gutter-width*2;
+
+    &.social {
+      justify-content: flex-end;
+    }
+  }
+}
+.social {
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: $grid-gutter-width*1.3;
+    }
+  }
+}
 
 
 

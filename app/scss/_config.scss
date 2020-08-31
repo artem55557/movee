@@ -125,6 +125,7 @@ a {
   font-weight: 500;
   letter-spacing: 2px;
   position: relative;
+  border-color: transparent;
 
   span {
     position: absolute;
@@ -167,3 +168,9 @@ a {
   margin: 0 auto;
 }
 
+.logo {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.23;
+  text-transform: uppercase;
+}
