@@ -120,6 +120,13 @@ button:active, button:focus {
   color: $text;
   cursor: pointer;
   border: 1px solid $accent;
+  transition: all 0.3s;
+
+  &:hover {
+    border-color: #b49d18;
+    background-color: #e9bf04;
+    transition: all 0.3s;
+  }
 }
 
 .btn--red {
@@ -131,6 +138,7 @@ button:active, button:focus {
   letter-spacing: 2px;
   position: relative;
   border-color: transparent;
+  transition: all 0.3s;
 
   span {
     position: absolute;
@@ -157,9 +165,14 @@ button:active, button:focus {
     z-index: 1;
   }
 
-  &:hover::before{
-    border-color: $bg-red;
+  &:hover{
+    color: #dbd8d8;
     transition: all 0.3s;
+
+    &::before {
+      border-color: $bg-red;
+      transition: all 0.3s;
+    }
   }
 }
 
