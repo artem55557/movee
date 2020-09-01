@@ -78,10 +78,7 @@
     letter-spacing: 1px;
   }
 }
-.h1 {
-}
-.btn {
-}
+
 .list-fscreen {
   padding: 0;
   display: flex;
@@ -171,7 +168,7 @@
   opacity: .7
 }
 
-//**************satges****************
+//**************stages****************
 
 .stages {
 
@@ -327,13 +324,25 @@
     display: none;
 
     &:target {
-      display: block;
+      // display: block;
+    }
+    &:nth-child(4){
+      // display: none;
+    }
+    &:nth-child(5){
+      // display: none;
     }
   }
 
   &__wrap {
     width: 100%;
-    overflow: hidden;
+
+    // &:nth-child(2) {
+    //   display: none;
+    // }
+    // &:nth-child(3) {
+    //   display: none;
+    // }
   }
 
   &__boby {
@@ -455,10 +464,6 @@
     justify-content: center;
   }
 }
-.btn {
-}
-.btn--br {
-}
 
 //**************Contact**************
 
@@ -478,6 +483,7 @@
       position: relative;
       margin-top: $grid-gutter-width*3.9;
       overflow: hidden;
+      display: flex;
     }
 
     &__adress {
@@ -487,8 +493,7 @@
       transform: translateY(50%);
     }
   }
-.container {
-}
+
 .form-contact {
   margin-top: $grid-gutter-width*4;
   margin-left: $grid-gutter-width*7;
