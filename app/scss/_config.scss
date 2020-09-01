@@ -101,6 +101,11 @@ a {
   }
 }
 
+button:active, button:focus {
+  outline: none;
+  border: none;
+}
+
 .btn {
   display: inline-flex;
   justify-content: center;

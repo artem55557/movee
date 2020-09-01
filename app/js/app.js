@@ -5,7 +5,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const swiperGas = new Swiper('#gazel', {
     loop: true,
-    slidesPerView: 1
+    // slidesPerView: 1,
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
 
     // pagination: {
       // el: '.swiper-pagination',
@@ -15,12 +20,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const swiperHeel = new Swiper('#heel', {
     loop: true,
-    slidesPerView: 1
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
   });
 
   const swiperTruck = new Swiper ('#truck', {
     loop: true,
-    slidesPerView: 1
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
   })
 
 //tabs

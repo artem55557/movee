@@ -319,7 +319,6 @@
   }
 
   &__container {
-    width: 80%;
     margin: 0 auto;
     display: none;
 
@@ -335,7 +334,7 @@
   }
 
   &__wrap {
-    width: 100%;
+    // width: 100%;
 
     // &:nth-child(2) {
     //   display: none;
@@ -349,11 +348,16 @@
   }
 }
 .slide {
-  padding: $grid-gutter-width;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex: 0 0 100%;
+
+
+  &__wrap {
+    padding: $grid-gutter-width;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+  }
 
 
   &__text {
@@ -390,6 +394,34 @@
       height: auto;
     }
   }
+}
+
+.button-prev,
+.button-next {
+  height: 25px;
+  width: 11px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-100%);
+  z-index: 15;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.button-prev {
+  background: url('../images/src/chevron-left.svg') no-repeat;
+
+  left: $grid-gutter-width*1.5;
+
+
+}
+.button-next {
+  background: url('../images/src/chevron-right.svg') no-repeat;
+  position: absolute;
+  right: $grid-gutter-width*1.5;
 }
 
 //***************Reviews*************
