@@ -18,6 +18,7 @@ $gutter: $grid-gutter-width;
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
 @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
 @import 'node_modules/swiper/swiper.scss';
+@import 'node_modules/swiper/components/pagination/pagination.scss';
 // @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
 // @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
 
@@ -68,6 +69,11 @@ body {
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: 4px;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 28px;
+    letter-spacing: normal;
+  }
 }
 
 .h2, h2 {
@@ -89,6 +95,10 @@ body {
   line-height: 1.2;
   font-weight: 500;
   letter-spacing: 0.1em;
+
+  @include media-breakpoint-down(md) {
+    letter-spacing: normal;
+  }
 }
 
 a {
@@ -127,6 +137,14 @@ button:active, button:focus {
     background-color: #e9bf04;
     transition: all 0.3s;
   }
+
+  @include media-breakpoint-down(md) {
+    height: 60px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
 }
 
 .btn--red {
@@ -137,7 +155,7 @@ button:active, button:focus {
   font-weight: 500;
   letter-spacing: 2px;
   position: relative;
-  border-color: transparent;
+  border: none;
   transition: all 0.3s;
 
   span {
@@ -174,6 +192,14 @@ button:active, button:focus {
       transition: all 0.3s;
     }
   }
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    &::before {
+      height: 0;
+      width: 0;
+    }
+  }
 }
 
 .btn--br {
@@ -184,6 +210,7 @@ button:active, button:focus {
   max-width: 1340px;
   padding: $grid-gutter-width*2 $grid-gutter-width;
   margin: 0 auto;
+
 }
 
 .logo {
