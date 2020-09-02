@@ -5,7 +5,7 @@
     <title>Movee - Квартирные перезды</title>
     <meta name="description" content="Movee - Квартирные перезды" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="img/favicon.png" />
+    <link rel="icon" href="images/favicon.ico" />
     <meta property="og:image" content="img/dest/preview.jpg" />
     <link rel="stylesheet" href="css/app.min.css" />
   </head>
@@ -14,16 +14,19 @@
     <section class="firstscreen">
       <div class="firstscreen__container container">
         <header class="firstscreen__header">
-          <div class="firstscreen__logo logo"><a href="#">Movee</a></div>
-          <nav class="firstscreen__menu menu">
-            <ul class="menu__list">
-              <li class="menu__item active"><a href="#" class="menu__link">Цены</a></li>
-              <li class="menu__item"><a href="#" class="menu__link">Автопарк</a></li>
-              <li class="menu__item"><a href="#" class="menu__link">Отзывы</a></li>
-              <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
-            </ul>
-          </nav>
-          <div class="firstscreen__contact"><a href="tel:+78000801213">8(800)-080-12-13</a></div>
+          <div class="firstscreen__topline">
+            <div class="firstscreen__logo logo"><a href="#">Movee</a></div>
+            <nav class="firstscreen__menu menu">
+              <ul class="menu__list">
+                <li class="menu__item"><a href="#price" class="menu__link">Цены</a></li>
+                <li class="menu__item"><a href="#cars" class="menu__link">Автопарк</a></li>
+                <li class="menu__item"><a href="#reviews" class="menu__link">Отзывы</a></li>
+                <li class="menu__item"><a href="#contacts" class="menu__link">Контакты</a></li>
+              </ul>
+            </nav>
+            <div class="firstscreen__contact"><a href="tel:+78000801213">8(800)-080-12-13</a></div>
+            <a href="#" class="firstscreen__burger burger-btn"><span></span></a>
+          </div>
         </header>
         <div class="firstscreen__body">
           <div class="firstscreen__title"><h1 class="h1">Квартирные<br> переезды</h1><span>По Москве и области</span></div>
@@ -70,7 +73,7 @@
         </div>
       </div>
     </section>
-    <section class="price">
+    <section id="price" class="price">
       <div class="price__container container">
         <div class="price__title">
           <h2 class="h2">Цены</h2>
@@ -107,10 +110,11 @@
             <div class="item-price__price">16 490₽</div>
             <a href="#" class="item-price__btn btn">Заказать</a>
           </div>
+          <a href="#" class="price__link">Все цены</a>
         </div>
       </div>
     </section>
-    <section class="cars">
+    <section id="cars" class="cars">
       <div class="cars__container container">
         <div class="cars__title">
           <h2 class="h2">Автопарк</h2>
@@ -143,7 +147,7 @@
             <div class="tabs__boby slide swiper-slide">
               <div class="slide__wrap">
                 <div class="slide__text">
-                  <h3 class="slide__title">Газель 3 метра-----------</h3>
+                  <h3 class="slide__title">Газель 4 метра</h3>
                   <ul class="slide__list">
                     <li>Ширина 2м</li>
                     <li>Высота 2м</li>
@@ -160,7 +164,7 @@
             <div class="tabs__boby slide swiper-slide">
               <div class="slide__wrap">
                 <div class="slide__text">
-                  <h3 class="slide__title">----Газель 3 метра----</h3>
+                  <h3 class="slide__title">Газель 5 метра</h3>
                   <ul class="slide__list">
                     <li>Ширина 2м</li>
                     <li>Высота 2м</li>
@@ -175,6 +179,7 @@
               </div>
             </div>
           </div>
+          <div class="swiper-pagination"></div>
           <div class="button-prev swiper-button-prev"></div>
           <div class="button-next swiper-button-next"></div>
         </div>
@@ -200,7 +205,7 @@
             <div class="tabs__boby slide swiper-slide">
               <div class="slide__wrap">
                 <div class="slide__text">
-                  <h3 class="slide__title">Каблуки***************</h3>
+                  <h3 class="slide__title">Каблуки***</h3>
                   <ul class="slide__list">
                     <li>Ширина 2м</li>
                     <li>Высота 2м</li>
@@ -215,6 +220,7 @@
               </div>
             </div>
           </div>
+          <div class="swiper-pagination"></div>
           <div class="button-prev swiper-button-prev"></div>
           <div class="button-next swiper-button-next"></div>
         </div>
@@ -240,7 +246,7 @@
             <div class="tabs__boby slide swiper-slide">
               <div class="slide__wrap">
                 <div class="slide__text">
-                  <h3 class="slide__title">************Грузовики</h3>
+                  <h3 class="slide__title">**Грузовики</h3>
                   <ul class="slide__list">
                     <li>Ширина 2м</li>
                     <li>Высота 2м</li>
@@ -255,12 +261,13 @@
               </div>
             </div>
           </div>
+          <div class="swiper-pagination"></div>
           <div class="button-prev swiper-button-prev"></div>
           <div class="button-next swiper-button-next"></div>
         </div>
       </div>
     </section>
-    <section class="reviews">
+    <section id="reviews" class="reviews">
       <div class="reviews__container container">
         <h2 class="h2 reviews__title">Отзывы</h2>
         <div class="reviews__body">
@@ -301,9 +308,9 @@
         <div class="item-reviews__footer"><a href="#" class="btn btn--br">Все отзывы</a></div>
       </div>
     </section>
-    <section class="contacts">
+    <section id="contacts" class="contacts">
       <div class="contacts__container container">
-        <form action="#" class="contact__form form-contact">
+        <form action="#" class="contacts__form form-contact">
           <h2 class="form-contact__title">Закажи переезд прямо сейчас</h2>
           <span>Мы перезвоним в течении 10 секунд</span>
           <div class="form-contact__body">
@@ -344,7 +351,7 @@
         <div class="footer__col">
           <a href="#" class="footer__logo logo">Movee</a>
           <a href="" class="footer__police">Политика <br> конфиденциальнности</a>
-          <a href="" class="footer__police">Соглашение на обработку персональных данных</a>
+          <a href="" class="footer__police">Соглашение на обработку <br> персональных данных</a>
         </div>
         <div class="footer__col">
           <nav class="footer__nav nav-footer">
