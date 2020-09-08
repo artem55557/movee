@@ -1,12 +1,13 @@
 // USER VARIABLES SECTION
 
-$accent: #E8C300; // Accent Color
+$accent: #FED100; // Accent Color
 $fontsize: 18px; // Body Font Size
-$bg-light: #ffffff;
-$text: #ffffff;
+$bg-red: #FF352B;
+$text: #333333;
 $textdark: #000000; // Text Color
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
-$monsterrat: 'Montserrat', sans-serif; 
+$monsterrat: 'Montserrat', sans-serif;
+$monsterratBold: 'Montserrat Bold', sans-serif;
 
 // Bootstrap compatible gutter variable => $gutter
 $grid-gutter-width: 20px;
@@ -16,6 +17,8 @@ $gutter: $grid-gutter-width;
 
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
 @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
+@import 'node_modules/swiper/swiper.scss';
+@import 'node_modules/swiper/components/pagination/pagination.scss';
 // @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
 // @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
 
@@ -58,4 +61,161 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   color: $text;
+}
+
+.h1, h1 {
+  font-family: $monsterrat;
+  font-size: 70px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: 4px;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 28px;
+    letter-spacing: normal;
+  }
+}
+
+.h2, h2 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.23;
+  letter-spacing: 1.3px;
+}
+
+.h3, h3 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.208;
+  letter-spacing: 1px;
+}
+
+.h4, h4 {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+
+  @include media-breakpoint-down(md) {
+    letter-spacing: normal;
+  }
+}
+
+a {
+  color: $text;
+  font-family: $monsterrat;
+
+  &:hover {
+    color: $text;
+    text-decoration: none;
+  }
+}
+
+button:active, button:focus {
+  outline: none;
+  border: none;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+  height: 50px;
+  background-color: $accent;
+  font-size: 20px;
+  line-height: 1.2;
+  outline: none;
+  text-decoration: none;
+  color: $text;
+  cursor: pointer;
+  border: 1px solid $accent;
+  transition: all 0.3s;
+
+  &:hover {
+    border-color: #b49d18;
+    background-color: #e9bf04;
+    transition: all 0.3s;
+  }
+
+  @include media-breakpoint-down(md) {
+    height: 60px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+
+.btn--red {
+  height: 60px;
+  min-width: 300px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  position: relative;
+  border: none;
+  transition: all 0.3s;
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-red;
+    z-index: 2;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #F2F2F2;
+    transition: all 0.3s;
+    z-index: 1;
+  }
+
+  &:hover{
+    color: #dbd8d8;
+    transition: all 0.3s;
+
+    &::before {
+      border-color: $bg-red;
+      transition: all 0.3s;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    &::before {
+      height: 0;
+      width: 0;
+    }
+  }
+}
+
+.btn--br {
+  border-color: $text;
+}
+
+.container {
+  max-width: 1340px;
+  padding: $grid-gutter-width*2 $grid-gutter-width;
+  margin: 0 auto;
+
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.23;
+  text-transform: uppercase;
 }

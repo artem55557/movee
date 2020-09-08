@@ -1,0 +1,71 @@
+@keyframes move {
+  25%{
+    opacity: 1;
+  }
+  33%{
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67%{
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100%{
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+}
+}
+@keyframes pulse {
+  0%{ 
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  50%{ 
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+}
+
+@keyframes tossing {
+  0%{
+    transform: rotate(-8deg);
+  }
+  50%{
+    transform: rotate(8deg);
+  }
+  100%{
+    transform: rotate(-8deg);
+  }
+}
+@keyframes circle-anim {
+  0% {
+    transform: rotate(0deg) scale(0.5) skew(1deg);
+    opacity: .1;
+  }
+  30%{
+    transform: rotate(0deg) scale(0.7) skew(1deg);
+    opacity: .5;
+  }
+  100%{
+    transform: rotate(0deg) scale(1) skew(1deg);
+    opacity: .1;
+  }
+}
+@keyframes circle-fill-anim {
+  0%{
+    transform: rotate(0deg) scale(0.7) skew(1deg);
+    opacity: .2;
+  }
+  50%{
+    transform: rotate(0deg) scale(1) skew(1deg);
+    opacity: .2;
+  }
+  100%{
+    transform: rotate(0deg) scale(0.7) skew(1deg);
+    opacity: .2;
+  }
+}

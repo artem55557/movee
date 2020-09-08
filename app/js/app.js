@@ -1,17 +1,5 @@
+
 document.addEventListener("DOMContentLoaded", function() {
-
-//Swiper
-
-  const swiperSpec = new Swiper('.swiper-container', {
-    loop: true,
-
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
-
-//menu
 
   const burger = document.querySelector('.burger-btn')
   const menu = document.querySelector('.menu')
@@ -20,8 +8,9 @@ document.addEventListener("DOMContentLoaded", function() {
     burger.addEventListener('click', event => {
       event.preventDefault()
       burger.classList.toggle('open')
-      menu.classList.toggle('menu--open')
-      if(menu.classList.value.includes('menu--open')) {
+      menu.classList.toggle('menu-open')
+
+      if(menu.classList.value.includes('menu-open')) {
         document.body.style.overflow = 'hidden'
       } else {
         document.body.style.overflow = ''
@@ -29,10 +18,126 @@ document.addEventListener("DOMContentLoaded", function() {
     })
   }
 
-//scroll by anchor
+//Swiper
+
+  const swiperGas = new Swiper('#gazel', {
+    loop: true,
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+
+  const swiperHeel = new Swiper('#heel', {
+    loop: true,
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+
+  const swiperTruck = new Swiper ('#truck', {
+    loop: true,
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  })
+
+//tabs
+
+  const tabLink = document.querySelectorAll('.tabs__item')
+
+  if(tabLink.length) {
+    document.querySelector(tabLink[0].getAttribute('href')).style.display = 'block'
+    swiperGas.update()
+    tabLink.forEach(i => {
+      i.addEventListener('click', event => {
+        event.preventDefault()
+        tabLink.forEach( t => {
+          t.classList.remove('active')
+          document.querySelector(t.getAttribute('href')).style.display = 'none'
+        })
+
+        i.classList.add('active')
+        const tabContent = document.querySelector(i.getAttribute('href'))
+        tabContent.style.display = 'block'
+        
+        swiperGas.update()
+        swiperHeel.update()
+        swiperTruck.update()
+      })
+    })
+  }
+
+  //text crop/show
+
+  const reviews = document.querySelector('.reviews')
+  const textReview = reviews.querySelectorAll('._text-review')
+  let textNotCrop = []
+  const length = 256
+
+  textReview.forEach( item => {
+    const text = item.innerHTML
+    textNotCrop.push(text)
+    item.innerHTML = textCrop(text, length)
+  })
+
+  if(reviews) {
+    reviews.addEventListener('click', event => {
+    event.preventDefault()
+    const elLink = event.target
+    const elCurText = elLink.previousElementSibling
+    const curText = elCurText.innerHTML
+
+    if(elLink.dataset.more === 'read') {
+      textShow(elCurText)
+      elLink.innerHTML = 'Скрыть'
+      elLink.dataset.more = 'hide'
+    }else if(elLink.dataset.more === 'hide') {
+      elCurText.innerHTML = textCrop(curText, length)
+      elLink.innerHTML = 'Читать полностью'
+      elLink.dataset.more = 'read'
+
+    }
+  })}
+
+
+  function textCrop(text, length) {
+    let result = text
+
+    if(text.length > length) {
+      result = text.substring(0, length-3) + '...'
+    }
+    return result
+  }
+
+  function textShow(elText) {
+      const text = elText.innerHTML
+      const index = textNotCrop.findIndex( t => t.includes(text.substring(0, text.length - 3)))
+      elText.innerHTML = textNotCrop[index]
+  }
+
+
+  //scroll by anchor
 
   const anchors = document.querySelectorAll('.menu__link')
-  const btnDown = document.querySelector('.btn-scroll-down')
   let animationTime = 300;
   let framesCount = 20;
   let topOffset = 55;
@@ -40,17 +145,12 @@ document.addEventListener("DOMContentLoaded", function() {
   anchors.forEach(function(item) {
     item.addEventListener('click', function(e) {
       e.preventDefault();
-      menu.classList.remove('menu--open')
+      menu.classList.remove('menu-open')
       burger.classList.remove('open')
       document.body.style.overflow = ''
       scrollToAnchor(item);
     });
   });
-
-  btnDown.addEventListener('click', e => {
-    e.preventDefault();
-    scrollToAnchor(btnDown)
-  })
 
   function scrollToAnchor(item) {
    
@@ -71,11 +171,11 @@ document.addEventListener("DOMContentLoaded", function() {
 //active menu link
 
   window.addEventListener('scroll', () => {
-    const topline = document.querySelector('.main-header')
+    const header = document.querySelector('.firstscreen__header')
     if (window.pageYOffset >= 100) {
-      topline.classList.add('fixed')
+      header.style.height = '50px'
     } else {
-      topline.classList.remove('fixed')
+      header.style = ''
     }
     activeLinkOnScroll()
   })
@@ -90,42 +190,12 @@ document.addEventListener("DOMContentLoaded", function() {
       let itemPoint = window.innerHeight * 0.3;
 
       if ((pageYOffset > itemOffset - itemPoint) && pageYOffset < (itemOffset + itemHeight - itemPoint)) {
-        link.classList.add('active')
+        link.parentElement.classList.add('active')
       } else {
-        link.classList.remove('active')
+        link.parentElement.classList.remove('active')
       }
     }
   }
-
-//animation on scroll
-
-  const animateItems = document.querySelectorAll('._amimate-items')
-
-  if (animateItems.length > 0) {
-    window.addEventListener('scroll', animateOnScroll);
-    function animateOnScroll() {
-      for (let i = 0; i < animateItems.length; i++) {
-        const animateItem = animateItems[i];
-        const animateItemHeight = animateItem.offsetHeight;
-        const animateItemOffset = offset(animateItem).top;
-        const animateStart = 4;
-
-        let animateItemPoint = window.innerHeight - animateItemHeight / animateStart;
-        if (animateItemHeight > window.innerHeight) {
-          animateItemPoint = window.innerHeight - window.innerHeight / animateStart;
-        }
-
-        if ((pageYOffset > animateItemOffset - animateItemPoint) && pageYOffset < (animateItemOffset + animateItemHeight)) {
-          animateItem.classList.add('_active')
-        } else {
-          // animateItem.classList.remove('_active')
-        }
-      }
-    }
-  }
-
-//Element offset
-
 
   function offset(el) {
     const rect = el.getBoundingClientRect(),
@@ -134,8 +204,5 @@ document.addEventListener("DOMContentLoaded", function() {
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
   }
 
-  animateOnScroll();
-  activeLinkOnScroll();
-
-
 });
+
